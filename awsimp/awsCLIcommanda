@@ -1,0 +1,15 @@
+$ aws ec2 describe-instances
+aws ec2 start-instances --instance-ids i-1348636c
+aws ec2 allocate-address
+Attach volume
+aws ec2 attach-volume --volume-id vol-1234567890abcdef0 --instance-id i-01474ef662b89480 --device /dev/sdf
+Create AMI
+aws ec2 create-image --instance-id i-1234567890abcdef0 --name "My server" --description "An AMI for my server"
+Creating AMI with out Rebbot
+aws ec2 create-image --instance-id i-0b09a25c58929de26 --name "My server" --no-reboot
+Create KEY Pair
+aws ec2 create-key-pair --key-name MyKeyPair
+create a Security Group
+aws ec2 create-security-group --group-name MySecurityGroup --description "My security group" --vpc-id vpc-1a2b3c4d
+Create a Snapshot
+aws ec2 create-snapshot --volume-id vol-1234567890abcdef0 --description "This is my root volume snapshot."

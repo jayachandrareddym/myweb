@@ -1,0 +1,8 @@
+Login using a developer ID. Using CloudFormation service, design a template to create a VPC with Auto Scaling and Elastic Load Balancing in Oregon region.
+
+User inputs: VPC and Subnet, Availability Zone, Key Pair, SSH rule, Instance type, Instance count, Region, AMI ID, Security group
+
+Output: Website URL
+Deploy a simple PHP application with database support in server stack using AMI. Database details should be read from an 'dbConnectionDetails.ini' file placed within an S3 bucket.
+
+Use the template to deploy similar set up in North Virginia and N.California regions. Input parameters should be configured appropriately to accommodate the region change

@@ -1,0 +1,9 @@
+Functions of Support staff
+
+Login to AWS console with a support staff id. Configure CloudWatch alarms to send SNS notifications for the below scenarios:
+
+When healthy threshold count of Auto Scaling group goes below 5 EC2 instances
+
+When billing exceeds 500 USD, send a notification to the account owner
+
+Configure two CloudWatch alarms to trigger Auto Scaling activity for both scale in and scale out purpose. These alarms  should be selectable during the Auto Scaling configuration. View logs using CloudWatch logs. Support staff user should be able to view API calls and request details using CloudTrail. After login in using support staff id, the user should be able to view the permissions provided for other user ids.

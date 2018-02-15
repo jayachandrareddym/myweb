@@ -1,0 +1,11 @@
+Functions of System administrator
+
+Create 9 IAM users having programmatic and console access.
+
+3 developers – EC2, S3, Lambda, VPC and RDS read only
+
+3 DB administratorss – RDS, DynamoDB and S3
+
+3 support staff memebers– View permissions on EC2, S3, RDS, DynamoDB, VPC, CloudWatch logs, IAM
+
+Sysadmin should create required policies, groups and roles applicable to developers and database administrators. IAM user ids should be mapped to corresponding groups. Sysadmin should also have permissions to view billing information and usage details of the AWS account.

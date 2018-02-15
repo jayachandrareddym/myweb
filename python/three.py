@@ -1,0 +1,3 @@
+#PF-Tryout
+name=input("Enter your name:")
+print(name)

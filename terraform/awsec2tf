@@ -1,0 +1,33 @@
+#To create a Instance through Terraform and attaching an elastic IP to it.
+provider "aws" {
+        access_key = "${var.access_key}"
+        secret_key = "${var.secret_key}"
+        region     = "${var.region}"
+}
+
+resource "aws_instance" "test" {
+ami = "ami-531a4c3c"
+instance_type = "t2.micro"
+key_name = "keylinux"
+provisioner "local-exec" {
+command = "echo ${aws_instance.test.public_ip} > ip_address.txt"
+  }
+tags {
+Name = "my-terraform-instance"
+}
+}
+resource "aws_eip" "ip" {
+instance = "${aws_instance.test.id}"
+}
+# New resource for the S3 bucket our application will use
+resource "aws_s3_bucket" "myfirstterraformbucket" {
+	bucket = "my-first-terraform-s3-bucket"
+	acl    = "private"
+
+# Tells Terraform that this EC2 instance must be created only after the
+# S3 bucket has been created.
+depends_on = ["aws_s3_bucket.myfirstterraformbucket"]
+}
+output "ip" {
+	value = "${aws_eip.ip.public_ip}"
+}
